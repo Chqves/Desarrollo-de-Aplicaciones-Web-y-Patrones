@@ -61,4 +61,14 @@ public class ConsultaController {
         return "/consultas/listado";
     }
 
+    @PostMapping("/consultaAmpliada")
+    public String consultaAmpliada(@RequestParam() int minExist,
+            @RequestParam() int maxExist, Model model) {
+        var lista = productoService.consultaAmpliada(minExist, maxExist);
+        model.addAttribute("productos", lista);
+        model.addAttribute("minExist", minExist);
+        model.addAttribute("maxExist", maxExist);
+        return "/consultas/listado";
+    }
+
 }

@@ -28,4 +28,8 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
             value = "SELECT * FROM producto p WHERE p.precio BETWEEN :precioInf AND :precioSup ORDER BY p.precio ASC")
     public List<Producto> consultaSQL(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup);
 
+    //Consulta Ampliada: productos por rango de existencias, ordenados de menor a mayor stock (JPQL)
+    @Query(value = "SELECT p FROM Producto p WHERE p.existencias BETWEEN :minExist AND :maxExist ORDER BY p.existencias ASC")
+    public List<Producto> consultaAmpliada(@Param("minExist") int minExist, @Param("maxExist") int maxExist);
+
 }
