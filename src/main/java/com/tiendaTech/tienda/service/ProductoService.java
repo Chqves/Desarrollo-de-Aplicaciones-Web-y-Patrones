@@ -79,12 +79,7 @@ public class ProductoService {
 
     @Transactional(readOnly = true)
     public List<Producto> consultaSQL(double precioInf, double precioSup) {
-        return productoRepository.consultaSQL(precioInf, precioSup);
-    }
-
-    @Transactional(readOnly = true)
-    public List<Producto> consultaAmpliada(int minExist, int maxExist) {
-        return productoRepository.consultaAmpliada(minExist, maxExist);
+        return productoRepository.consultaJPQL(precioInf, precioSup);
     }
 
 }
