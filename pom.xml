@@ -20,9 +20,9 @@
     <developers>
         <developer/>
     </developers>
-    <scm>
+    <scm> 
         <connection/>
-        <developerConnection/>
+        <developerConnection/> 
         <tag/>
         <url/>
     </scm>
@@ -130,7 +130,7 @@
                         <arg>-Xlint</arg>
                     </compilerArgs>
                 </configuration>
-            </plugin>
+            </plugin> 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
